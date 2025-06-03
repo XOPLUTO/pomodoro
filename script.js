@@ -92,7 +92,6 @@ class PomodoroTimer {
         this.isRunning = true;
         this.isPaused = false;
         this.startBtn.textContent = 'Pause';
-        this.timerCircle.classList.add('active');
 
         this.timerInterval = setInterval(() => {
             this.timeLeft--;
@@ -109,7 +108,6 @@ class PomodoroTimer {
         this.isRunning = false;
         this.isPaused = true;
         this.startBtn.textContent = 'Resume';
-        this.timerCircle.classList.remove('active');
         clearInterval(this.timerInterval);
     }
 
@@ -117,7 +115,6 @@ class PomodoroTimer {
         this.isRunning = false;
         this.isPaused = false;
         this.startBtn.textContent = 'Start';
-        this.timerCircle.classList.remove('active');
         clearInterval(this.timerInterval);
 
         // Reset to current session type duration
@@ -136,7 +133,6 @@ class PomodoroTimer {
     completeSession() {
         this.isRunning = false;
         this.startBtn.textContent = 'Start';
-        this.timerCircle.classList.remove('active');
         clearInterval(this.timerInterval);
 
         if (this.isBreak) {
