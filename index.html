@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍅 Minimalist Pomodoro Timer</title>
+    <meta name="description" content="A beautiful, distraction-free Pomodoro timer to boost your focus and productivity">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">🍅 Pomodoro</h1>
+            <button class="settings-btn" id="settingsBtn" aria-label="Open settings">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
+                </svg>
+            </button>
+        </header>
+
+        <!-- Timer Display -->
+        <main class="timer-section">
+            <div class="timer-circle">
+                <svg class="progress-ring" width="280" height="280">
+                    <circle class="progress-ring-bg" cx="140" cy="140" r="120"></circle>
+                    <circle class="progress-ring-fill" cx="140" cy="140" r="120"></circle>
+                </svg>
+                <div class="timer-content">
+                    <div class="time-display" id="timeDisplay">25:00</div>
+                    <div class="session-type" id="sessionType">Focus Time</div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button class="btn btn-primary" id="startBtn">Start</button>
+                <button class="btn btn-secondary" id="resetBtn">Reset</button>
+            </div>
+
+            <!-- Session Counter -->
+            <div class="session-counter">
+                <span>Sessions completed: <span id="sessionCount">0</span></span>
+            </div>
+        </main>
+
+        <!-- Settings Panel -->
+        <div class="settings-panel" id="settingsPanel">
+            <div class="settings-content">
+                <div class="settings-header">
+                    <h2>Settings</h2>
+                    <button class="close-btn" id="closeBtn" aria-label="Close settings">×</button>
+                </div>
+                
+                <div class="settings-group">
+                    <label for="focusDuration">Focus Duration</label>
+                    <div class="input-group">
+                        <input type="number" id="focusDuration" min="1" max="60" value="25">
+                        <span>minutes</span>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <label for="breakDuration">Break Duration</label>
+                    <div class="input-group">
+                        <input type="number" id="breakDuration" min="1" max="30" value="5">
+                        <span>minutes</span>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="soundEnabled" checked>
+                        <span class="checkmark"></span>
+                        Sound Notifications
+                    </label>
+                </div>
+
+                <button class="btn btn-primary" id="saveSettings">Save Settings</button>
+            </div>
+        </div>
+
+        <!-- Overlay -->
+        <div class="overlay" id="overlay"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
